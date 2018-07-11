@@ -79,3 +79,12 @@
 [submodule ".vim_runtime"]
 	path = .vim_runtime
 	url = https://github.com/amix/vimrc
+[submodule ".tmux_plugins/battery"]
+	path = .tmux_plugins/battery
+	url = https://github.com/tmux-plugins/tmux-battery
+[submodule ".tmux_plugins/mouse"]
+	path = .tmux_plugins/mouse
+	url = https://github.com/NHDaly/tmux-better-mouse-mode
+[submodule ".tmux_plugins/tmux-spotify"]
+	path = .tmux_plugins/tmux-spotify
+	url = https://github.com/robhurring/tmux-spotify
