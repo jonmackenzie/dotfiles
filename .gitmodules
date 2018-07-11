@@ -1,3 +1,81 @@
 [submodule ".nightshell"]
 	path = .nightshell
 	url = https://github.com/nightsense/nightshell
+[submodule ".vimpkg/bundle/ReplaceWithRegister"]
+	path = .vimpkg/bundle/ReplaceWithRegister
+	url = https://github.com/vim-scripts/ReplaceWithRegister
+[submodule ".vimpkg/bundle/YankRing.vim"]
+	path = .vimpkg/bundle/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim
+[submodule ".vimpkg/bundle/ale"]
+	path = .vimpkg/bundle/ale
+	url = https://github.com/w0rp/ale
+[submodule ".vimpkg/bundle/command-t"]
+	path = .vimpkg/bundle/command-t
+	url = https://github.com/wincent/command-t
+[submodule ".vimpkg/bundle/gv.vim"]
+	path = .vimpkg/bundle/gv.vim
+	url = https://github.com/junegunn/gv.vim
+[submodule ".vimpkg/bundle/limelight.vim"]
+	path = .vimpkg/bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule ".vimpkg/bundle/nerdtree"]
+	path = .vimpkg/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vimpkg/bundle/nerdtree-git-plugin"]
+	path = .vimpkg/bundle/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+[submodule ".vimpkg/bundle/rainbow_parentheses.vim"]
+	path = .vimpkg/bundle/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule ".vimpkg/bundle/splitjoin.vim"]
+	path = .vimpkg/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim
+[submodule ".vimpkg/bundle/vim-abolish"]
+	path = .vimpkg/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule ".vimpkg/bundle/vim-addon-mw-utils"]
+	path = .vimpkg/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule ".vimpkg/bundle/vim-commentary"]
+	path = .vimpkg/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".vimpkg/bundle/vim-easymotion"]
+	path = .vimpkg/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule ".vimpkg/bundle/vim-exchange"]
+	path = .vimpkg/bundle/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange
+[submodule ".vimpkg/bundle/vim-fugitive"]
+	path = .vimpkg/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vimpkg/bundle/vim-gitgutter"]
+	path = .vimpkg/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vimpkg/bundle/vim-highlightedyank"]
+	path = .vimpkg/bundle/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank
+[submodule ".vimpkg/bundle/vim-journal"]
+	path = .vimpkg/bundle/vim-journal
+	url = https://github.com/junegunn/vim-journal
+[submodule ".vimpkg/bundle/vim-lion"]
+	path = .vimpkg/bundle/vim-lion
+	url = https://github.com/tommcdo/vim-lion
+[submodule ".vimpkg/bundle/vim-repeat"]
+	path = .vimpkg/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule ".vimpkg/bundle/vim-rhubarb"]
+	path = .vimpkg/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
+[submodule ".vimpkg/bundle/vim-startify"]
+	path = .vimpkg/bundle/vim-startify
+	url = https://github.com/mhinz/vim-startify
+[submodule ".vimpkg/bundle/vim-surround"]
+	path = .vimpkg/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vimpkg/bundle/vim-windowswap"]
+	path = .vimpkg/bundle/vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap
+[submodule ".vim_runtime"]
+	path = .vim_runtime
+	url = https://github.com/amix/vimrc
