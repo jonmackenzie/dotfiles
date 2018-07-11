@@ -1,0 +1,3 @@
+[submodule ".nightshell"]
+	path = .nightshell
+	url = https://github.com/nightsense/nightshell
