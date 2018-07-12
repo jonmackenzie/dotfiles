@@ -85,3 +85,6 @@
 [submodule ".tmux_plugins/tmux-spotify"]
 	path = .tmux_plugins/tmux-spotify
 	url = https://github.com/robhurring/tmux-spotify
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
