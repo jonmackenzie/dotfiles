@@ -1,6 +1,4 @@
-" grab all the packages
-
-" build off the amix vimrc
+" build off the amix vimrc (hopefully will be removed soon in favour of hand-made stuff)
 set runtimepath+=~/.vim_runtime
 source ~/.vim_runtime/vimrcs/basic.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
@@ -112,8 +110,6 @@ nnoremap <C-S> :wa<cr>
 
 nnoremap <C-U> :GundoToggle<cr>
 
-" This might not work, I *think* just having the .nightshell folder provides this colour scheme but idk
-"colo carbonized-dark
 colo apprentice
 
 call plug#begin('~/.vim/plugged')
