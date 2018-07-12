@@ -110,7 +110,7 @@ nnoremap <C-S> :wa<cr>
 
 nnoremap <C-U> :GundoToggle<cr>
 
-colo apprentice
+colo gruvbox
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/gv.vim'
