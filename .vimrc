@@ -214,12 +214,20 @@ let g:startify_session_persistence = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 0
 
+let g:startify_custom_header =  map(split(system('archey'), '\n'), '"   ". v:val') + startify#fortune#cowsay()
+
+let g:startify_files_number = 32
+
 let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': [   '   Sessions']       },
       \ { 'type': 'files',     'header': [   '   Files']            },
-      \ { 'type': 'dir',       'header': [   '   Files '. getcwd()] },
-      \ { 'type': 'bookmarks', 'header': [   '   Bookmarks']      },
-      \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
-      \ { 'type': 'commands',  'header': [   '   Commands']       },
       \ ]
+
+" removed from list:
+"      \ { 'type': 'commands',  'header': [   '   Commands']       },
+"      \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
+"      \ { 'type': 'sessions',  'header': [   '   Sessions']       },
+"      \ { 'type': 'dir',       'header': [   '   Files '. getcwd()] },
+"      \ { 'type': 'bookmarks', 'header': [   '   Bookmarks']      },
+
+
 
