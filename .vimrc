@@ -1,9 +1,209 @@
-" build off the amix vimrc (hopefully will be removed soon in favour of hand-made stuff)
-set runtimepath+=~/.vim_runtime
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+" Following few lines adapted from the amix rc
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Turn on the WiLd menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+"Always show current position
+set ruler
+
+" Height of the command bar
+set cmdheight=2
+
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch 
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+set ai "Auto indent
+set si "Smart indent
+
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
+
+" Toggle spellcheck
+map <leader>ss :setlocal spell!<cr>
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Turn persistent undo on 
+" means that you can undo even when you close a buffer/VIM
+try
+    set undodir=~/.vim/temp_dirs/undodir
+    set undofile
+catch
+endtry
+
+" Enable syntax highlighting
+syntax enable 
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+set background=dark
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
+" When you press gv you Ack after the selected text
+vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+
+" Open Ack and put the cursor in the right position
+map <leader>g :Ack 
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+" lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+      \   'right': [ [ 'lineinfo' ], ['percent'] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': ' ', 'right': ' ' },
+      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+      \ }
+
+" let g:lightline = {
+"       \ 'colorscheme': 'wombat'
+"       \ }
+
+" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+" let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+" let s:palette.inactive.middle = s:palette.normal.middle
+" let s:palette.tabline.middle = s:palette.normal.middle
+
+" Python syntax
+let g:syntastic_python_checkers=['pyflakes']
+
+" Javascript syntax
+let g:syntastic_javascript_checkers = ['jshint']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                            "
+" end of amix stuff                                          "
+"                                                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Tell vim to remember certain things when we exit
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo'
+
 
 " look up "relative line numbering" it makes using vim so much easier
 set relativenumber
@@ -44,6 +244,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 map <C-ScrollWheelDown> <Left>
 map <C-ScrollWheelUp> <Right>
 
+map <f2>  :w<cr>
+map <f3>  :Startify<cr>
+map <f12> :Limelight!!<cr>
+
 " load pathogen plugins
 execute pathogen#infect()
 call pathogen#helptags()
@@ -58,7 +262,9 @@ let mapleader = " "
 " if you're in a git repo this will show you which lines have been modified and how
 :au VimEnter * :GitGutterEnable
 nnoremap <Leader>g :GitGutterToggle<cr>
-" toggles the file tree (I usually just leave it open all the time)
+
+" --- I never use this nerdtree stuff anymore now that I have command-t but sometimes it is more useful
+" toggles the file tree
 nnoremap <Leader>f :NERDTreeToggle<cr>
 " selects the file tree; when you select a file it'll open in the pane you were just in
 nnoremap <silent> <Leader>n :NERDTreeFind<CR>
@@ -97,7 +303,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-D> <C-W><C-C>
 
 " make sure 0 goes ALL the way to the beginning of the line, have hyphen be the soft BOL, also add hard BOL to M
-nnoremap 0 $lk
+"nnoremap 0 $lk
 nnoremap - ^
 nnoremap M M0
 
