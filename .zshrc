@@ -150,5 +150,6 @@ alias rsfconsole="cd ~/routersploit; python3 rsf.py"
 alias a="git add"
 alias aa="git add *"
 alias com="git commit"
+alias s="git status"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
