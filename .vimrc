@@ -234,7 +234,8 @@ call pathogen#helptags()
 
 nmap Y y$
 
-let g:highlightedyank_highlight_duration = -1
+" yank highlight disappears after 10 seconds
+let g:highlightedyank_highlight_duration = 10000
 
 " spacebar set as leader, so <space>G toggles git gutter, <space>F toggles tree, etc.
 let mapleader = " "
