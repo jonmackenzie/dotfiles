@@ -85,3 +85,6 @@
 [submodule ".tmux_plugins/tmux-spotify"]
 	path = .tmux_plugins/tmux-spotify
 	url = https://github.com/robhurring/tmux-spotify
+[submodule ".vimpkg/bundle/vim-lastplace"]
+	path = .vimpkg/bundle/vim-lastplace
+	url = git://github.com/farmergreg/vim-lastplace.git
