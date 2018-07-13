@@ -10,8 +10,8 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+" Set 10 lines to the cursor - when moving vertically using j/k
+set so=10
 
 " Turn on the WiLd menu
 set wildmenu
@@ -28,7 +28,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -87,9 +87,6 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -102,9 +99,6 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
-
-" Toggle spellcheck
-map <leader>ss :setlocal spell!<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -146,9 +140,6 @@ endif
 " When you press gv you Ack after the selected text
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-" Open Ack and put the cursor in the right position
-map <leader>g :Ack 
-
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
@@ -174,10 +165,6 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
 
-" let g:lightline = {
-"       \ 'colorscheme': 'wombat'
-"       \ }
-
 " let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
 " let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
 " let s:palette.inactive.middle = s:palette.normal.middle
@@ -189,20 +176,7 @@ let g:syntastic_python_checkers=['pyflakes']
 " Javascript syntax
 let g:syntastic_javascript_checkers = ['jshint']
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                            "
-" end of amix stuff                                          "
-"                                                            "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Tell vim to remember certain things when we exit
-"  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saves and restores the buffer list
-"  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo'
+set noshowmode
 
 
 " look up "relative line numbering" it makes using vim so much easier
@@ -245,8 +219,14 @@ map <C-ScrollWheelDown> <Left>
 map <C-ScrollWheelUp> <Right>
 
 map <f2>  :w<cr>
-map <f3>  :Startify<cr>
+map <f3>  :wq<cr>
+map <f11> :setlocal spell!<cr>
 map <f12> :Limelight!!<cr>
+
+imap <f2>  <c-o><f2>
+imap <f3>  <c-o><f3>
+imap <f11> <c-o><f10>
+imap <f12> <c-o><f12>
 
 " load pathogen plugins
 execute pathogen#infect()
@@ -365,25 +345,6 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
-
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-    else
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=2
-        set showcmd
-    endif
-endfunction
-
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 " heathen, I know
 set mouse=a
