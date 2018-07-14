@@ -153,3 +153,5 @@ alias com="git commit"
 alias s="git status"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config config status.showUntrackedFiles no
+
