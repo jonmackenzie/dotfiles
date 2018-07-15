@@ -382,7 +382,7 @@ let g:startify_session_persistence = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 0
 
-let g:startify_custom_header =  map(split(system('archey'), '\n'), '"   ". v:val') + startify#fortune#cowsay()
+"let g:startify_custom_header =  map(split(system('archey'), '\n'), '"   ". v:val') + startify#fortune#cowsay()
 
 let g:startify_files_number = 32
 
