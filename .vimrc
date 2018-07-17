@@ -273,7 +273,7 @@ command! W w
 command! Q q
 
 nnoremap \t :terminal ++curwin <cr>
- tnoremap <C-Esc> <C-\><C-n>
+tnoremap <C-Esc> <C-\><C-n>
 
 " <control>hjlk to move between panes
 nnoremap <C-J> <C-W><C-J>

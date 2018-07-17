@@ -96,6 +96,7 @@ alias lra='ls -Ahltr '
 
 alias c='clear'
 alias cl='clear; l'
+alias cs='clear; git status'
 
 alias claer='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
 alias celar='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
