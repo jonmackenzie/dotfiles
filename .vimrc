@@ -220,11 +220,13 @@ map <C-ScrollWheelUp> <Right>
 
 map <f2>  :w<cr>
 map <f3>  :wq<cr>
+map <f4>  :q<cr>
 map <f11> :setlocal spell!<cr>
 map <f12> :Limelight!!<cr>
 
 imap <f2>  <c-o><f2>
 imap <f3>  <c-o><f3>
+imap <f4>  <c-o><f4>
 imap <f11> <c-o><f10>
 imap <f12> <c-o><f12>
 
