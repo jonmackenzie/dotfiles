@@ -218,15 +218,19 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 map <C-ScrollWheelDown> <Left>
 map <C-ScrollWheelUp> <Right>
 
-map <f2>  :w<cr>
+map <f1>  :w<cr>
+map <f2>  :wa<cr>
 map <f3>  :wq<cr>
 map <f4>  :q<cr>
+map <f5>  :qa<cr>
 map <f11> :setlocal spell!<cr>
 map <f12> :Limelight!!<cr>
 
+imap <f1>  <c-o><f1>
 imap <f2>  <c-o><f2>
 imap <f3>  <c-o><f3>
 imap <f4>  <c-o><f4>
+imap <f5>  <c-o><f5>
 imap <f11> <c-o><f10>
 imap <f12> <c-o><f12>
 
@@ -370,6 +374,8 @@ let NERDTreeMinimalUI = 1
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 " copied and lightly modified from startify help
+
+au! WinNew * Startify " except this, this is from https://github.com/mhinz/vim-startify/issues/139
 
 let g:startify_session_dir = "~/.vim/session"
 
