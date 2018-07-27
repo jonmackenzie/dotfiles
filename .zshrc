@@ -106,8 +106,6 @@ alias clera='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
 alias caler='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
 
 alias sshcs='ssh j_mackenzie@cs.smu.ca'
-alias ssh4477='ssh jd_mackenzie@csci4477.cs.smu.ca'
-alias ssh3451='ssh u39@csci4423.cs.smu.ca'
 alias sshbl='ssh 173.212.92.103 -p 4022'
 alias sshbl1234='ssh 173.212.92.103 -p 4022 -n -L 1234:localhost:27017'
 
@@ -116,9 +114,6 @@ alias brewup='echo "updating..."; brew update; echo "upgrading..."; brew upgrade
 alias brewupv='echo "updating..."; brew update -v; echo "upgrading..."; brew upgrade -v; echo "pruning..."; brew prune -v; echo "cleaning up..."; brew cleanup -v; echo "done";'
 alias upd='brewup'
 alias ip='ipconfig getifaddr en0'
-
-alias blwatch="~/.scripts_etc/bl/watch.sh"
-alias dscompile="browserify -v -t hbsfy ~/flooma/resources/ajax/doorstep.js > ~/flooma/resources/ajax/compiled/doorstep.js"
 
 eval $(thefuck --alias)
 
