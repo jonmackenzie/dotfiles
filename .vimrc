@@ -223,7 +223,8 @@ map <f2>  :wa<cr>
 map <f3>  :wq<cr>
 map <f4>  :q<cr>
 map <f5>  :qa<cr>
-map <f11> :setlocal spell!<cr>
+map <f10> :Gdiff<cr>
+map <f11> :NERDTreeToggle<cr>
 map <f12> :Limelight!!<cr>
 
 imap <f1>  <c-o><f1>
@@ -231,7 +232,8 @@ imap <f2>  <c-o><f2>
 imap <f3>  <c-o><f3>
 imap <f4>  <c-o><f4>
 imap <f5>  <c-o><f5>
-imap <f11> <c-o><f10>
+imap <f10> <c-o><f10>
+imap <f11> <c-o><f11>
 imap <f12> <c-o><f12>
 
 " load pathogen plugins
