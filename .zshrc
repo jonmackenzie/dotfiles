@@ -42,9 +42,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    sudo       # esc twice prepends command with sudo
+)
 
-source ~/.zsh-local # for anything machine-specific
+[[ -f ~/.zsh-local ]] && . ~/.zsh-local # for anything machine-specific
 source $ZSH/oh-my-zsh.sh
 
 # hopefully mostly universally useful (or at least usable) stuff
