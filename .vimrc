@@ -81,8 +81,8 @@ set si "Smart indent
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-R>=@/<CR><CR>
+vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-R>=@/<CR><CR>
 
 " Always show the status line
 set laststatus=2
@@ -101,7 +101,7 @@ if has("autocmd")
 endif
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>'tzt'm
 
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
@@ -138,10 +138,10 @@ if executable('ag')
 endif
 
 " When you press gv you Ack after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+vnoremap <silent> gv :call VisualSelection('gv', '')<cr>
 
 " When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<cr>
 
 " lightline
 let g:lightline = {
@@ -215,8 +215,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "autocmd vimenter * NERDTree
 
 " ctrl-sroll for left and right
-map <C-ScrollWheelDown> <Left>
-map <C-ScrollWheelUp> <Right>
+map <c-ScrollWheelDown> <left>
+map <c-ScrollWheelUp> <right>
 
 map <f1>  :w<cr>
 map <f2>  :wa<cr>
@@ -250,30 +250,30 @@ let mapleader = " "
 
 " if you're in a git repo this will show you which lines have been modified and how
 :au VimEnter * :GitGutterEnable
-nnoremap <Leader>g :GitGutterToggle<cr>
+nnoremap <leader>g :GitGutterToggle<cr>
 
 " --- I never use this nerdtree stuff anymore now that I have command-t but sometimes it is more useful
 " toggles the file tree
-nnoremap <Leader>f :NERDTreeToggle<cr>
-" selects the file tree; when you select a file it'll open in the pane you were just in
-nnoremap <silent> <Leader>n :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeToggle<cr>
 " same as above, but start a search (think of it as like an "open file" command)
-nnoremap <silent> <Leader>o :NERDTreeFind<CR>/
+nnoremap <silent> <leader>o :NERDTreeFind<cr>/
 
 " close tree if last thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " <space> + and - for vertical resizing (used = instead of + so I don't have to press shift)
-nnoremap <Leader>- :vertical resize -5<cr>
-nnoremap <Leader>= :vertical resize +5<cr>
+nnoremap <leader>- :vertical resize -5<cr>
+nnoremap <leader>= :vertical resize +5<cr>
 " and the keys below them for horizontal
-nnoremap <Leader>[ :res -5<cr>
-nnoremap <Leader>] :res +5<cr>
+nnoremap <leader>[ :res -5<cr>
+nnoremap <leader>] :res +5<cr>
 
-nnoremap <Leader>v :vsp<cr>
-nnoremap <Leader>h :sp<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>h :sp<cr>
 
-nnoremap <Leader>l :Limelight!!<cr>
+nnoremap <leader>l :Limelight!!<cr>
+
+nnoremap <leader>nt :tabnew<cr>
 
 command! WQ wq
 command! Wq wq
@@ -281,15 +281,19 @@ command! W w
 command! Q q
 
 nnoremap \t :terminal ++curwin <cr>
-tnoremap <C-Esc> <C-\><C-n>
+tnoremap <c-esc> <c-\><c-n>
+
+" "goto buffer" borrowed from romainl
+" (cmd-t has a similar command but this way shows the buffer numbers)
+nnoremap gb :ls<cr>:b
 
 " <control>hjlk to move between panes
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
 
-nnoremap <C-D> <C-W><C-C>
+nnoremap <c-d> <c-w><c-c>
 
 " make sure 0 goes ALL the way to the beginning of the line, have hyphen be the soft BOL, also add hard BOL to M
 "nnoremap 0 $lk
@@ -299,11 +303,11 @@ nnoremap M M0
 " clear highlighting
 nnoremap \\ :noh<cr>
 " search-and-replace
-nnoremap <Leader>r :%Subvert/
+nnoremap <leader>r :%Subvert/
 " save all
-nnoremap <C-S> :wa<cr>
+nnoremap <c-s> :wa<cr>
 
-nnoremap <C-U> :GundoToggle<cr>
+nnoremap <c-u> :GundoToggle<cr>
 
 colo gruvbox
 
@@ -335,11 +339,11 @@ hi gitgutteraddinvisible ctermbg=none
 hi gitgutterchangeinvisible ctermbg=none
 hi gitgutterdeleteinvisible ctermbg=none
 
-" turn rainbow paran on
-au VimEnter * RainbowParenthesesToggle
-au Syntax   * RainbowParenthesesLoadRound
-au Syntax   * RainbowParenthesesLoadSquare
-au Syntax   * RainbowParenthesesLoadBraces
+" turn rainbow paren on
+au vimenter * RainbowParenthesesToggle
+au syntax   * RainbowParenthesesLoadRound
+au syntax   * RainbowParenthesesLoadSquare
+au syntax   * RainbowParenthesesLoadBraces
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -375,9 +379,11 @@ let NERDTreeMinimalUI = 1
 
 let delimitMate_matchpairs = "(:),[:],{:}"
 
-" copied and lightly modified from startify help
+" https://github.com/mhinz/vim-startify/issues/139
+au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
+au! bufenter * if !exists('t:new_tab') && expand('%') == "" | let t:new_tab = 1 | Startify | endif
 
-au! WinNew * Startify " except this, this is from https://github.com/mhinz/vim-startify/issues/139
+" copied and lightly modified from startify help
 
 let g:startify_session_dir = "~/.vim/session"
 
