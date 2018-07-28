@@ -4,11 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -49,34 +44,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+source ~/.zsh-local # for anything machine-specific
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-export PATH=/Users/jon/.nvm/versions/node/v8.2.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Users/jon/.vimpkg/bin
+# hopefully mostly universally useful (or at least usable) stuff
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -94,59 +65,24 @@ alias lr='ls -hltr '
 alias lta='ls -Ahlt '
 alias lra='ls -Ahltr '
 
-alias c='clear'
-alias cl='clear; l'
-alias cs='clear; git status'
-
-alias claer='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-alias celar='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-alias cleqr='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-alias celqr='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-alias clera='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-alias caler='clear; echo LEARN TO TYPE YA CLUMSY BASTARD'
-
-alias sshcs='ssh j_mackenzie@cs.smu.ca'
-alias sshbl='ssh 173.212.92.103 -p 4022'
-alias sshbl1234='ssh 173.212.92.103 -p 4022 -n -L 1234:localhost:27017'
-
-alias serve='sudo php -S 0.0.0.0:80 -t '
-alias brewup='echo "updating..."; brew update; echo "upgrading..."; brew upgrade; echo "pruning..."; brew prune; echo "cleaning up..."; brew cleanup; echo "done";'
-alias brewupv='echo "updating..."; brew update -v; echo "upgrading..."; brew upgrade -v; echo "pruning..."; brew prune -v; echo "cleaning up..."; brew cleanup -v; echo "done";'
-alias upd='brewup'
-alias ip='ipconfig getifaddr en0'
-
-eval $(thefuck --alias)
-
-alias starwars='telnet towel.blinkenlights.nl'
-
-alias weather='curl wttr.in/halifax?m'
-
-alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
-alias mongod='mongod --config /usr/local/etc/mongod.conf'
-
-alias rm='trash'
-
-alias tensorflow='echo "entering tensorflow, exit with deactivate"; source ~/tensorflow/bin/activate'
-
-alias lolsl='sl | clolcat'
-
-alias setoolkit='cd /usr/local/set; sudo ./setoolkit; cd'
-
-alias bl='cd ~/flooma; vim'
-
-# htop crashes system without root (from github issue)
-alias htop='sudo htop'
-
-alias abolish='vim ~/.vim/after/plugin/abolish.vim'
-
-alias rsfconsole="cd ~/routersploit; python3 rsf.py"
-
 alias a="git add"
 alias aa="git add *"
 alias com="git commit"
 alias s="git status"
+
+alias c='clear'
+alias cl='clear; l'
+alias cs='clear; git status'
+
+alias serve='sudo php -S 0.0.0.0:80 -t '
+
+alias starwars='telnet towel.blinkenlights.nl' # very important
+
+alias weather='curl wttr.in/halifax?m'
+
+alias mongod='mongod --config /usr/local/etc/mongod.conf'
+
+alias tensorflow='echo "entering tensorflow, exit with deactivate"; source ~/tensorflow/bin/activate'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config config status.showUntrackedFiles no
