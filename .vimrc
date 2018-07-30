@@ -81,8 +81,8 @@ set si "Smart indent
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-R>=@/<CR><CR>
-vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-R>=@/<CR><CR>
+vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-r>=@/<cr><cr>
+vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-r>=@/<cr><cr>
 
 " Always show the status line
 set laststatus=2
@@ -97,7 +97,7 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    autocmd bufwritepre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
 " Remove the Windows ^M - when the encodings gets messed up
@@ -183,14 +183,12 @@ set noshowmode
 set relativenumber
 set number
 
-"set termguicolors
-
 " I prefer my lines not to wrap
 set nowrap
 " I can't remember what this does but I think it has something to do with the line wrap thing
 set textwidth=0
 
-set clipboard=unnamed
+set clipboard^=unnamed
 
 " I you split panes from within vim you'll probably want
 " them to open below/ to the right instead of the other way around
@@ -211,30 +209,46 @@ imap `get app.get("/");<left><left><left>
 " Disable automatic comment continuation on enter
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Open NERDTree on start
-"autocmd vimenter * NERDTree
-
 " ctrl-sroll for left and right
 map <c-ScrollWheelDown> <left>
 map <c-ScrollWheelUp> <right>
 
+set <f13>=[30;1W " alt+f3 on my iTerm
+set <f14>=[30;1C " alt+f4
+set <f15>=[1;2S  " shift+f4
+set <f16>=[30;WS " alt+shift+W
+
 map <f1>  :w<cr>
 map <f2>  :wa<cr>
 map <f3>  :wq<cr>
+map <f13> :wqa<cr>
 map <f4>  :q<cr>
-map <f5>  :qa<cr>
+map <f14> :qa<cr>
+map <f15> :tabclose<cr>
 map <f10> :Gdiff<cr>
 map <f11> :NERDTreeToggle<cr>
 map <f12> :Limelight!!<cr>
+map <f16> :w<bar>so ~/.vimrc<cr>
 
 imap <f1>  <c-o><f1>
 imap <f2>  <c-o><f2>
-imap <f3>  <c-o><f3>
+imap <f3>  <esc><f3>
 imap <f4>  <c-o><f4>
-imap <f5>  <c-o><f5>
 imap <f10> <c-o><f10>
 imap <f11> <c-o><f11>
 imap <f12> <c-o><f12>
+
+" shift+arrows (u/d/r/l)
+set <f20>=[1;2A <f21>=[1;2B <f22>=[1;2C <f23>=[1;2D
+set <f24>=[30;TL <f25>=[30;TR
+
+" map shift+arrows to tab stuff
+map <f20> :tabnew<cr>
+map <f21> :tabclose<cr>
+map <f22> :tabnext<cr>
+map <f23> :tabprevious<cr>
+map <f24> :tabm -1<cr>
+map <f25> :tabm +1<cr>
 
 " load pathogen plugins
 execute pathogen#infect()
@@ -249,14 +263,8 @@ let g:highlightedyank_highlight_duration = 10000
 let mapleader = " "
 
 " if you're in a git repo this will show you which lines have been modified and how
-:au VimEnter * :GitGutterEnable
+:au vimenter * :GitGutterEnable
 nnoremap <leader>g :GitGutterToggle<cr>
-
-" --- I never use this nerdtree stuff anymore now that I have command-t but sometimes it is more useful
-" toggles the file tree
-nnoremap <leader>f :NERDTreeToggle<cr>
-" same as above, but start a search (think of it as like an "open file" command)
-nnoremap <silent> <leader>o :NERDTreeFind<cr>/
 
 " close tree if last thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -285,7 +293,7 @@ tnoremap <c-esc> <c-\><c-n>
 
 " "goto buffer" borrowed from romainl
 " (cmd-t has a similar command but this way shows the buffer numbers)
-nnoremap gb :ls<cr>:b
+nnoremap gb :ls<cr>:
 
 " <control>hjlk to move between panes
 nnoremap <c-j> <c-w><c-j>
@@ -295,8 +303,7 @@ nnoremap <c-h> <c-w><c-h>
 
 nnoremap <c-d> <c-w><c-c>
 
-" make sure 0 goes ALL the way to the beginning of the line, have hyphen be the soft BOL, also add hard BOL to M
-"nnoremap 0 $lk
+" add hard BOL to M
 nnoremap - ^
 nnoremap M M0
 
@@ -403,13 +410,13 @@ let g:startify_enable_special = 0
 let g:startify_files_number = 32
 
 let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': [   '   Sessions']       },
       \ { 'type': 'files',     'header': [   '   Files']            },
       \ ]
 
 " removed from list:
 "      \ { 'type': 'commands',  'header': [   '   Commands']       },
 "      \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
-"      \ { 'type': 'sessions',  'header': [   '   Sessions']       },
 "      \ { 'type': 'dir',       'header': [   '   Files '. getcwd()] },
 "      \ { 'type': 'bookmarks', 'header': [   '   Bookmarks']      },
 
