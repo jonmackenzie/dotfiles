@@ -228,7 +228,7 @@ map <f15> :tabclose<cr>
 map <f10> :Gdiff<cr>
 map <f11> :NERDTreeToggle<cr>
 map <f12> :Limelight!!<cr>
-map <f16> :w<bar>so ~/.vimrc<cr>
+map <f16> :w<bar>so ~/.vimrc<cr>:noh<cr>
 
 imap <f1>  <c-o><f1>
 imap <f2>  <c-o><f2>
@@ -335,10 +335,10 @@ hi folded ctermbg=none
 hi foldcolumn ctermbg=none
 hi linenr ctermbg=none
 hi cursorlinenr ctermbg=none
-hi gitgutteradd ctermbg=none
-hi gitgutterchange ctermbg=none
-hi gitgutterdelete ctermbg=none
-hi gitgutterchangedelete ctermbg=none
+hi gitgutteradd ctermbg=none ctermfg=22
+hi gitgutterchange ctermbg=none ctermfg=3
+hi gitgutterdelete ctermbg=none ctermfg=160
+hi gitgutterchangedelete ctermbg=none ctermfg=6
 hi gitgutteradddefault ctermbg=none
 hi gitgutterchangedefault ctermbg=none
 hi gitgutterdeletedefault ctermbg=none
