@@ -318,11 +318,6 @@ nnoremap <c-u> :GundoToggle<cr>
 
 colo gruvbox
 
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/gv.vim'
-Plug 'mhinz/vim-startify'
-call plug#end()
-
 " makes a bunch of stuff transparent (gets rid of bg colour) useful if you have a bg image or a (semi) transparent terminal
 hi normal ctermbg=none
 hi nontext ctermbg=none

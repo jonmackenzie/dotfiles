@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/limelight.vim"]
 	path = .vim/bundle/limelight.vim
 	url = https://github.com/junegunn/limelight.vim
-[submodule ".vim/bundle/gv.vim"]
-	path = .vim/bundle/gv.vim
-	url = https://github.com/junegunn/gv.vim
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
 	url = https://github.com/wincent/command-t
