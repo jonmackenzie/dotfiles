@@ -178,7 +178,6 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 set noshowmode
 
-
 " look up "relative line numbering" it makes using vim so much easier
 set relativenumber
 set number
@@ -340,6 +339,9 @@ hi gitgutterdeletedefault ctermbg=none
 hi gitgutteraddinvisible ctermbg=none
 hi gitgutterchangeinvisible ctermbg=none
 hi gitgutterdeleteinvisible ctermbg=none
+
+" update git gutter on save
+autocmd BufWritePost * GitGutter
 
 " turn rainbow paren on
 au vimenter * RainbowParenthesesToggle
