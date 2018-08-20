@@ -381,6 +381,8 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let g:NERDTreeWinPos = "left"
 let NERDTreeMinimalUI = 1
 
+let g:cheat40_use_default = 0
+
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 " https://github.com/mhinz/vim-startify/issues/139
