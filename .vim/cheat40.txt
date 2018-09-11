@@ -1,0 +1,72 @@
+Press q to dismiss, <Tab> to lose focus
+
+Function keys {{{1
+F1                       :w
+F2                       :wa
+F3                       :wq
+alt+F3                   :wqa
+F4                       :q
+alt+F4                   :qa
+F10                      :Gdiff
+F11                      :NERDTreeToggle
+F12                      :Limelight!!
+}}}
+Leader{{{1
+M                        fix ^M
+R                        subvert
+L                        Limelight
+NT                       new tab
+}}}
+Other{{{1
+alt+shift+W              write, source
+}}}
+Other Mappings{{{1
+search for selection     * or #        V
+}}}
+Edit {{{1
+Basics {{{2
+Next text state          g+            N
+Prev text state          g-            N
+Paste after and align    ]p           VN
+Paste before and align   ]P           VN
+Insert in selected lines «C-v»‹Move›I  N
+Append to selected lines «C-v»‹Move›A  N
+Change in selected lines «C-v»‹Move›c  N
+Delete in selected lines «C-v»‹Move›x  N
+Reselect                 gv            N
+Select all               ggVG          N
+Delete previous word     «C-w»        IC
+Erase line before cursor «C-u»        IC
+Repeat last macro        @@            N
+Run cmd in all buffers   :bufdo ‹Cmd›  N
+Text {{{1
+Change to uppercase      gU            O
+Change to lowercase      gu            O
+Uppercase line           gUU           N
+Lowercase line           guu           N
+Change to uppercase      U             V
+Change to lowercase      u             V
+Toggle case              ~            *N
+Toggle case              ~             V
+Format current line      gww           N
+Run Cmd on lines =~ ‹P›  :g/‹P›/‹Cmd› VN
+View {{{1
+Fold                     zc           *N
+Unfold                   zv           *N
+Toggle fold              za           *N
+Fold all                 zM            N
+Unfold all               zR            N
+Edit last edited file    «C-^»         N
+Get file info            «C-g»         N
+Character info           ga           *N
+Line/word/char count     g«C-g»       VN
+Go {{{1
+Prev pos in change list  g;            N
+Next pos in change list  g,            N
+Jump to next blank line  }             M
+Jump to prev blank line  {             M
+Jump to begin of block   [{            M
+Jump to end of block     ]}            M
+Jump to end of section   ]]            M
+Jump to beg. of section  [[            M
+Jump to matching delim   %             M

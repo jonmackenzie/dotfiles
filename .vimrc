@@ -288,7 +288,7 @@ command! W w
 command! Q q
 
 nnoremap \t :terminal ++curwin <cr>
-tnoremap <c-esc> <c-\><c-n>
+tnoremap <c-\><c-\> <c-\><c-n>
 
 " "goto buffer" borrowed from romainl
 " (cmd-t has a similar command but this way shows the buffer numbers)
