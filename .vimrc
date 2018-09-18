@@ -206,7 +206,7 @@ imap `f function()<cr>{}<left><cr><up><right><cr>
 imap `r <right>,<space>function(req, res)<cr>{}<left><left><backspace><right><cr><up><right><cr>
 imap `post app.post("/");<left><left><left>
 imap `get app.get("/");<left><left><left>
-imap `/ </<C-X><C-O>
+imap `/ </<c-x><c-o><esc>F<i
 
 " Disable automatic comment continuation on enter
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
