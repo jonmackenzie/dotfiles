@@ -176,6 +176,8 @@ let g:syntastic_python_checkers=['pyflakes']
 " Javascript syntax
 let g:syntastic_javascript_checkers = ['jshint']
 
+let g:syntastic_ignore_files = ['.*\.txt']
+
 set noshowmode
 
 " look up "relative line numbering" it makes using vim so much easier
@@ -204,6 +206,7 @@ imap `f function()<cr>{}<left><cr><up><right><cr>
 imap `r <right>,<space>function(req, res)<cr>{}<left><left><backspace><right><cr><up><right><cr>
 imap `post app.post("/");<left><left><left>
 imap `get app.get("/");<left><left><left>
+imap `/ </<C-X><C-O>
 
 " Disable automatic comment continuation on enter
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -406,17 +409,17 @@ let g:startify_enable_special = 0
 
 "let g:startify_custom_header =  map(split(system('archey'), '\n'), '"   ". v:val') + startify#fortune#cowsay()
 
-let g:startify_files_number = 32
+let g:startify_files_number = 20
 
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': [   '   Sessions']       },
+      \ { 'type': 'dir',       'header': [   '   Files '. getcwd()] },
       \ { 'type': 'files',     'header': [   '   Files']            },
       \ ]
 
 " removed from list:
 "      \ { 'type': 'commands',  'header': [   '   Commands']       },
 "      \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
-"      \ { 'type': 'dir',       'header': [   '   Files '. getcwd()] },
 "      \ { 'type': 'bookmarks', 'header': [   '   Bookmarks']      },
 
 
