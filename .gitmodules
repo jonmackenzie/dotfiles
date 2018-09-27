@@ -82,3 +82,15 @@
 [submodule ".vim/bundle/vim-highlightedyank"]
 	path = .vim/bundle/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank
+[submodule "/Users/jon/.vim/bundle/vim-peekaboo"]
+	path = /Users/jon/.vim/bundle/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo
+[submodule ".vim/bundle/vim-signature"]
+	path = .vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature
+[submodule ".vim/bundle/vim-polyglot"]
+	path = .vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/bundle/scratch.vim"]
+	path = .vim/bundle/scratch.vim
+	url = https://github.com/mtth/scratch.vim
