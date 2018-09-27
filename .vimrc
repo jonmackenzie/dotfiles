@@ -143,6 +143,9 @@ vnoremap <silent> gv :call VisualSelection('gv', '')<cr>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<cr>
 
+" Instead of failing a command because of unsaved changes, instead raise a dialogue asking if you wish to save changed files.
+set confirm
+
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -197,7 +200,7 @@ set splitbelow
 set splitright
 
 set report=0
-set shortmess=
+set shortmess=aIT
 
 let g:limelight_conceal_ctermfg = 23
 
@@ -228,6 +231,7 @@ map <f13> :wqa<cr>
 map <f4>  :q<cr>
 map <f14> :qa<cr>
 map <f15> :tabclose<cr>
+map <f9>  :!lazygit<cr><cr>
 map <f10> :Gdiff<cr>
 map <f11> :NERDTreeToggle<cr>
 map <f12> :Limelight!!<cr>
@@ -343,6 +347,7 @@ hi gitgutterdeletedefault ctermbg=none
 hi gitgutteraddinvisible ctermbg=none
 hi gitgutterchangeinvisible ctermbg=none
 hi gitgutterdeleteinvisible ctermbg=none
+hi signaturemarktext ctermbg=none ctermfg=8
 
 " update git gutter on save
 autocmd BufWritePost * GitGutter
