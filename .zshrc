@@ -8,7 +8,7 @@ CASE_SENSITIVE="true"
 export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -69,5 +69,11 @@ alias mongod='mongod --config /usr/local/etc/mongod.conf'
 alias tensorflow='echo "entering tensorflow, exit with deactivate"; source ~/tensorflow/bin/activate'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+alias :q="exit"
+alias :qa="tmux kill-window"
+
+alias cp="cp -r"
+
 config config status.showUntrackedFiles no
 
