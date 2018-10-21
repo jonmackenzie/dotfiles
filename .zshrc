@@ -55,7 +55,7 @@ alias cl='clear; l'
 alias cs='clear; git status'
 
 # safe copy/ move
-alias cp='cp -i'
+alias cp='cp -i -r'
 alias mv='mv -i'
 
 alias serve='sudo php -S 0.0.0.0:80 -t '

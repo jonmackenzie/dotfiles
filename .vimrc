@@ -290,6 +290,8 @@ nnoremap <leader>l :Limelight!!<cr>
 
 nnoremap <leader>nt :tabnew<cr>
 
+map <Leader>, <Plug>(easymotion-prefix)
+
 command! WQ wq
 command! Wq wq
 command! W w
