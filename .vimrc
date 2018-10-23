@@ -316,6 +316,9 @@ nnoremap <c-d> <c-w><c-c>
 nnoremap - ^
 nnoremap M M0
 
+nnoremap H ^
+nnoremap L $
+
 " clear highlighting
 nnoremap \\ :noh<cr>
 " search-and-replace
@@ -395,6 +398,16 @@ let NERDTreeMinimalUI = 1
 let g:cheat40_use_default = 0
 
 let delimitMate_matchpairs = "(:),[:],{:}"
+
+let g:multi_cursor_use_default_mapping = 0 
+let g:multi_cursor_start_word_key      = '<c-w>'
+let g:multi_cursor_select_all_word_key = '<c-a>'
+let g:multi_cursor_start_key           = 'g<c-w>'
+let g:multi_cursor_select_all_key      = 'g<c-a>'
+let g:multi_cursor_next_key            = '<c-w>'
+let g:multi_cursor_prev_key            = '<c-p>'
+let g:multi_cursor_skip_key            = '<c-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 " https://github.com/mhinz/vim-startify/issues/139
 au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
