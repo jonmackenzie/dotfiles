@@ -386,6 +386,12 @@ set showcmd
 " I'd rather not type zR every time I open a file
 set nofoldenable
 
+augroup notes
+    au!
+    autocmd BufNewFile,BufRead notes* set syntax=journal
+    autocmd BufNewFile,BufRead *.notes set syntax=journal
+augroup END
+
 " I do a lot of development with handlebars and syntastic thinks it's supposed
 " to be plain html and gives me warnings everywhere so I just don't check html
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }

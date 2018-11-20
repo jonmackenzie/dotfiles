@@ -75,5 +75,7 @@ alias :qa="tmux kill-window"
 
 alias cp="cp -r"
 
+alias vi="vim"
+
 config config status.showUntrackedFiles no
 
