@@ -231,7 +231,7 @@ map <f13> :wqa<cr>
 map <f4>  :q<cr>
 map <f14> :qa<cr>
 map <f15> :tabclose<cr>
-map <f9>  :!lazygit<cr><cr>
+map <f9>  :w<bar>silent make<bar>unsilent redraw!<bar>cwindow<cr>
 map <f10> :Gdiff<cr>
 map <f11> :NERDTreeToggle<cr>
 map <f12> :Limelight!!<cr>
@@ -241,6 +241,7 @@ imap <f1>  <c-o><f1>
 imap <f2>  <c-o><f2>
 imap <f3>  <esc><f3>
 imap <f4>  <c-o><f4>
+imap <f9>  <c-o><f9>
 imap <f10> <c-o><f10>
 imap <f11> <c-o><f11>
 imap <f12> <c-o><f12>
@@ -250,7 +251,7 @@ set <f20>=[1;2A <f21>=[1;2B <f22>=[1;2C <f23>=[1;2D
 set <f24>=[30;TL <f25>=[30;TR
 
 " map shift+arrows to tab stuff
-map <f20> :tabnew<cr>
+map <f20> :tabnew<cr>:Startify<cr>
 map <f21> :tabclose<cr>
 map <f22> :tabnext<cr>
 map <f23> :tabprevious<cr>
@@ -417,7 +418,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 " https://github.com/mhinz/vim-startify/issues/139
 au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
-au! bufenter * if !exists('t:new_tab') && expand('%') == "" | let t:new_tab = 1 | Startify | endif
 
 " copied and lightly modified from startify help
 

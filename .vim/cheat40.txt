@@ -7,6 +7,7 @@ F3                       :wq
 alt+F3                   :wqa
 F4                       :q
 alt+F4                   :qa
+F9                       :silent make...
 F10                      :Gdiff
 F11                      :NERDTreeToggle
 F12                      :Limelight!!
