@@ -406,15 +406,12 @@ let g:cheat40_use_default = 0
 
 let delimitMate_matchpairs = "(:),[:],{:}"
 
-let g:multi_cursor_use_default_mapping = 0 
-let g:multi_cursor_start_word_key      = '<c-w>'
-let g:multi_cursor_select_all_word_key = '<c-a>'
-let g:multi_cursor_start_key           = 'g<c-w>'
-let g:multi_cursor_select_all_key      = 'g<c-a>'
-let g:multi_cursor_next_key            = '<c-w>'
-let g:multi_cursor_prev_key            = '<c-p>'
-let g:multi_cursor_skip_key            = '<c-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+" https://github.com/stoeffel/.dotfiles/blob/master/vim/visual-at.vim
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+    echo "@".getcmdline()
+    execute ":'<,'>normal @".nr2char(getchar())
+endfunction
 
 " https://github.com/mhinz/vim-startify/issues/139
 au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
