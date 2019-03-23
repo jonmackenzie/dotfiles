@@ -258,6 +258,13 @@ map <f23> :tabprevious<cr>
 map <f24> :tabm -1<cr>
 map <f25> :tabm +1<cr>
 
+tnoremap <f20> <c-w>:tabnew<cr>:Startify<cr>
+tnoremap <f21> <c-d>
+tnoremap <f22> <c-w>:tabnext<cr>
+tnoremap <f23> <c-w>:tabprevious<cr>
+tnoremap <f24> <c-w>:tabm -1<cr>
+tnoremap <f25> <c-w>:tabm +1<cr>
+
 " load pathogen plugins
 execute pathogen#infect()
 call pathogen#helptags()
@@ -310,6 +317,11 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+tnoremap <c-j> <c-w><c-j>
+tnoremap <c-k> <c-w><c-k>
+tnoremap <c-l> <c-w><c-l>
+tnoremap <c-h> <c-w><c-h>
 
 nnoremap <c-d> <c-w><c-c>
 

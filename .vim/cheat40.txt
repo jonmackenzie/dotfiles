@@ -17,6 +17,7 @@ M                        fix ^M
 R                        subvert
 L                        Limelight
 NT                       new tab
+WW                       windowswap
 }}}
 Other{{{1
 alt+shift+W              write, source
@@ -41,6 +42,7 @@ Erase line before cursor «C-u»        IC
 Repeat last macro        @@            N
 Run cmd in all buffers   :bufdo ‹Cmd›  N
 Text {{{1
+Search next text object  gn            N
 Change to uppercase      gU            O
 Change to lowercase      gu            O
 Uppercase line           gUU           N

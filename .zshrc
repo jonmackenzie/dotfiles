@@ -78,5 +78,10 @@ alias cp="cp -r"
 alias vi="vim"
 alias vimrc="vim ~/.vimrc"
 
+# /usr/local/Cellar/ranger/1.9.2/libexec/ranger/data/scope.sh tensorflow 40 10 ~/temp true |less
+
+alias fzc='fzf --ansi --preview="/usr/local/Cellar/ranger/1.9.2/libexec/ranger/data/scope.sh {} 40 10 ~/temp true |less" --preview-window=right:60%'
+alias vfz='vim `fzc`'
+
 config config status.showUntrackedFiles no
 
