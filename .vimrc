@@ -229,6 +229,7 @@ map <f2>  :wa<cr>
 map <f3>  :wq<cr>
 map <f13> :wqa<cr>
 map <f4>  :q<cr>
+set pastetoggle=<f8>
 map <f14> :qa<cr>
 map <f15> :tabclose<cr>
 map <f9>  :w<bar>silent make<bar>unsilent redraw!<bar>cwindow<cr>
@@ -297,6 +298,9 @@ nnoremap <leader>h :sp<cr>
 nnoremap <leader>l :Limelight!!<cr>
 
 nnoremap <leader>nt :tabnew<cr>
+
+nnoremap <leader>sh :SidewaysLeft<cr>
+nnoremap <leader>sl :SidewaysRight<cr>
 
 map <Leader>, <Plug>(easymotion-prefix)
 
@@ -426,7 +430,7 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 " https://github.com/mhinz/vim-startify/issues/139
-au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
+" au! winnew * Startify " this works fine for new windows but not for new tabs, hence the following bullshit
 
 " copied and lightly modified from startify help
 

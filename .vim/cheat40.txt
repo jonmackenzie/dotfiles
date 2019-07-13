@@ -7,12 +7,14 @@ F3                       :wq
 alt+F3                   :wqa
 F4                       :q
 alt+F4                   :qa
+F8                       :toggle paste
 F9                       :silent make...
 F10                      :Gdiff
 F11                      :NERDTreeToggle
 F12                      :Limelight!!
 }}}
 Leader{{{1
+S+H/L                    sideways swap
 M                        fix ^M
 R                        subvert
 L                        Limelight
@@ -21,6 +23,7 @@ WW                       windowswap
 }}}
 Other{{{1
 alt+shift+W              write, source
+shift+j/k                move text u/d
 }}}
 Other Mappings{{{1
 search for selection     * or #        V

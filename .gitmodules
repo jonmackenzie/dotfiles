@@ -94,3 +94,12 @@
 [submodule ".vim/bundle/scratch.vim"]
 	path = .vim/bundle/scratch.vim
 	url = https://github.com/mtth/scratch.vim
+[submodule ".vim/bundle/sideways.vim"]
+	path = .vim/bundle/sideways.vim
+	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule ".vim/bundle/vim-move"]
+	path = .vim/bundle/vim-move
+	url = https://github.com/matze/vim-move.git
+[submodule ".vim/bundle/committia.vim"]
+	path = .vim/bundle/committia.vim
+	url = https://github.com/rhysd/committia.vim.git
