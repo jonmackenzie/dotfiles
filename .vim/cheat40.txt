@@ -27,6 +27,9 @@ shift+j/k                move text u/d
 }}}
 Other Mappings{{{1
 search for selection     * or #        V
+add fold                 zfa<obj>      N
+close curent fold        zc            N
+open fold                zo            N
 }}}
 Edit {{{1
 Basics {{{2

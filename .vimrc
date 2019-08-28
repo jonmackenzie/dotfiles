@@ -209,6 +209,7 @@ imap `f function()<cr>{}<left><cr><up><right><cr>
 imap `r <right>,<space>function(req, res)<cr>{}<left><left><backspace><right><cr><up><right><cr>
 imap `post app.post("/");<left><left><left>
 imap `get app.get("/");<left><left><left>
+imap `dgid document.getElementById("")<left><left>
 imap `/ </<c-x><c-o><esc>F<i
 imap `> >`/
 
@@ -229,9 +230,9 @@ map <f2>  :wa<cr>
 map <f3>  :wq<cr>
 map <f13> :wqa<cr>
 map <f4>  :q<cr>
-set pastetoggle=<f8>
 map <f14> :qa<cr>
 map <f15> :tabclose<cr>
+set pastetoggle=<f8>
 map <f9>  :w<bar>silent make<bar>unsilent redraw!<bar>cwindow<cr>
 map <f10> :Gdiff<cr>
 map <f11> :NERDTreeToggle<cr>

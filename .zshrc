@@ -76,6 +76,8 @@ alias :qa="tmux kill-window"
 alias cp="cp -r"
 
 alias vi="vim"
+alias v="vim"
+alias e="vim"
 alias vimrc="vim ~/.vimrc"
 
 # /usr/local/Cellar/ranger/1.9.2/libexec/ranger/data/scope.sh tensorflow 40 10 ~/temp true |less
