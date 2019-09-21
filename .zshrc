@@ -62,7 +62,7 @@ alias serve='sudo php -S 0.0.0.0:80 -t '
 
 alias starwars='telnet towel.blinkenlights.nl' # very important
 
-alias weather='curl wttr.in/halifax?m'
+alias weather='curl v2.wttr.in/halifax,ns?m'
 
 alias mongod='mongod --config /usr/local/etc/mongod.conf'
 

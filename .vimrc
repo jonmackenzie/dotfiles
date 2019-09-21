@@ -183,9 +183,13 @@ let g:syntastic_ignore_files = ['.*\.txt']
 
 set noshowmode
 
-" look up "relative line numbering" it makes using vim so much easier
-set relativenumber
 set number
+
+" relative line numbering makes using vim so much easier
+set relativenumber
+
+" toggle relative line numbering with \r
+nnoremap \r :set relativenumber!<cr>
 
 " I prefer my lines not to wrap
 set nowrap
@@ -273,8 +277,8 @@ call pathogen#helptags()
 
 nmap Y y$
 
-" yank highlight disappears after 10 seconds
-let g:highlightedyank_highlight_duration = 10000
+" yank highlight disappears after 3 seconds
+let g:highlightedyank_highlight_duration = 3000
 
 " spacebar set as leader, so <space>G toggles git gutter, <space>F toggles tree, etc.
 let mapleader = " "
@@ -302,6 +306,8 @@ nnoremap <leader>nt :tabnew<cr>
 
 nnoremap <leader>sh :SidewaysLeft<cr>
 nnoremap <leader>sl :SidewaysRight<cr>
+
+nnoremap <leader>z :Scratch<cr>
 
 map <Leader>, <Plug>(easymotion-prefix)
 
